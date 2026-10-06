@@ -800,26 +800,24 @@ CASCaRA GRAPH EVIDENCE:
 
 
     response = ollama.chat(
-        model=CHAT_MODEL,
-
-        messages=[
-            {
-                "role":
-                    "system",
-
-                "content":
-                    system_prompt,
-            },
-
-            {
-                "role":
-                    "user",
-
-                "content":
-                    user_prompt,
-            },
-        ],
-    )
+    model=CHAT_MODEL,
+    messages=[
+        {
+            "role": "system",
+            "content": system_prompt,
+        },
+        {
+            "role": "user",
+            "content": user_prompt,
+        },
+    ],
+    think=True,
+    options={
+        "num_ctx": 16384,
+        "num_predict": 8192,
+        "temperature": 0.1,
+    },
+)
 
 
     return response.message.content
