@@ -811,7 +811,6 @@ CASCaRA GRAPH EVIDENCE:
             "content": user_prompt,
         },
     ],
-    think=True,
     options={
         "num_ctx": 16384,
         "num_predict": 8192,
